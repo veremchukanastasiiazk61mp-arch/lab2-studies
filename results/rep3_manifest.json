@@ -1,0 +1,28 @@
+{
+  "procs": 4,
+  "runs": {
+    "1": {
+      "name": "rep3_step_n1",
+      "t0_unix": 1792593617.76,
+      "X_rps": 198.4,
+      "X_std_rps": 6.555,
+      "X_step": 8,
+      "stop_reason": "two_steps_below_0.9",
+      "prom_samples": 1557
+    }
+  },
+  "docker": {
+    "ncpu": 8,
+    "mem_total_bytes": 4009426944,
+    "server_version": "29.8.2",
+    "compose_version": "5.6.0"
+  },
+  "step_rate": 25,
+  "web_limits": {
+    "WEB_CPUS": "0.5",
+    "WEB_MEMORY": "512M",
+    "DB_NAME": "studies",
+    "DB_POOL_SIZE": "15"
+  },
+  "G_rps": 5487.467
+}

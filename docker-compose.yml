@@ -1,0 +1,118 @@
+name: studies
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_NAME:?задайте DB_NAME у .env}
+      POSTGRES_USER: ${DB_USER:?задайте DB_USER у .env}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?задайте DB_PASSWORD у .env}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # Схема накочується автоматично на порожньому томі
+      - ./db/init.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    networks: [data]
+    healthcheck:
+      # -h 127.0.0.1: під час initdb тимчасовий сервер слухає лише unix-сокет,
+      # тож перевірка по TCP не дає хибного «готово» до накочування схеми
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+  web:
+    build: ./service
+    image: studies-service:latest
+    restart: unless-stopped
+    environment:
+      PYTHONUNBUFFERED: "1"
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_NAME: ${DB_NAME:?}
+      DB_USER: ${DB_USER:?}
+      DB_PASSWORD: ${DB_PASSWORD:?}
+      DB_POOL_MIN: ${DB_POOL_MIN:?}
+      DB_POOL_SIZE: ${DB_POOL_SIZE:?}   # ЛР2: найбільша кількість зʼєднань одного екземпляра
+      DB_CONNECT_TIMEOUT: ${DB_CONNECT_TIMEOUT:?}
+      DB_COMMAND_TIMEOUT: ${DB_COMMAND_TIMEOUT:?}
+      HTTP_HOST: 0.0.0.0
+      HTTP_PORT: "8000"          # має збігатися з upstream у nginx/nginx.conf
+      HTTP_WORKERS: ${HTTP_WORKERS:?}
+      DEFAULT_LIMIT: ${DEFAULT_LIMIT:?}
+      MAX_LIMIT: ${MAX_LIMIT:?}
+      HISTOGRAM_BUCKETS_MS: ${HISTOGRAM_BUCKETS_MS:?}   # ЛР2: бакети гістограми, мс
+      LOG_LEVEL: ${LOG_LEVEL:?}
+      ACCESS_LOG: ${ACCESS_LOG:?}
+    # Кількість інстансів — один параметр: WEB_REPLICAS у .env або в оточенні
+    deploy:
+      replicas: ${WEB_REPLICAS:?задайте WEB_REPLICAS у .env}
+      resources:
+        limits:
+          cpus: "${WEB_CPUS:?задайте WEB_CPUS у .env}"        # варіант 5: 0.5 CPU (ЛР2, крок 7: за потреби удвічі менше)
+          memory: ${WEB_MEMORY:?задайте WEB_MEMORY у .env}    # варіант 5: 512M
+    stop_grace_period: 30s     # ЛР2: після SIGTERM сервіс дочікується запитів в обробці; SIGKILL лише через 30 с
+    depends_on:
+      db:
+        condition: service_healthy
+    networks: [data, edge]     # портів на хост не публікує
+    healthcheck:
+      # Без curl/wget: перевірка самим інтерпретатором. 503 від /healthz → виняток → код виходу 1
+      test: ["CMD", "python", "-c", "import os,urllib.request;urllib.request.urlopen('http://127.0.0.1:'+os.environ['HTTP_PORT']+'/healthz',timeout=2)"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+  lb:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    ports:
+      - "${LB_PORT:?задайте LB_PORT у .env}:80"   # єдиний опублікований порт стенду
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    ulimits:
+      nofile: 65536
+    depends_on:
+      web:
+        condition: service_healthy
+    networks: [edge]
+
+  # ---------- ЛР2: моніторинг ----------
+  prometheus:
+    image: prom/prometheus:v2.55.1
+    restart: unless-stopped
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --storage.tsdb.retention.time=7d
+    volumes:
+      - promdata:/prometheus
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      - "${PROM_PORT:?задайте PROM_PORT у .env}:9090"   # інтерфейс і API Prometheus на хості
+    networks: [data]           # бачить web (DNS) і postgres-exporter
+
+  # Додаткова метрика варіанта 5 (М2)
+  postgres-exporter:
+    image: prometheuscommunity/postgres-exporter:v0.16.0
+    restart: unless-stopped
+    environment:
+      DATA_SOURCE_URI: db:5432/${DB_NAME:?}?sslmode=disable
+      DATA_SOURCE_USER: ${DB_USER:?}
+      DATA_SOURCE_PASS: ${DB_PASSWORD:?}
+    command:
+      - --extend.query-path=/etc/postgres-exporter/queries.yaml
+    volumes:
+      - ./postgres-exporter/queries.yaml:/etc/postgres-exporter/queries.yaml:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    networks: [data]
+
+networks:
+  data:   # db <-> web, prometheus, postgres-exporter
+  edge:   # lb <-> web
+
+volumes:
+  pgdata:
+  promdata:       # дані Prometheus; діаграми кроку 8 будують до видалення тома

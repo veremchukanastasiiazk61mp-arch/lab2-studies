@@ -1,0 +1,539 @@
+{
+  "X_rps": 5487.467,
+  "X_std_rps": 662.863,
+  "X_step": 28,
+  "stop_reason": "two_steps_below_0.9",
+  "steps": [
+    {
+      "step": 1,
+      "offered_rps": 200,
+      "achieved_mean_rps": 199.933,
+      "achieved_std_rps": 1.1,
+      "sent_mean_rps": 199.933,
+      "ratio": 0.9997,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 9.76,
+      "p95_ms": 16.732,
+      "p99_ms": 17.482,
+      "window_s": [
+        15,
+        30
+      ]
+    },
+    {
+      "step": 2,
+      "offered_rps": 400,
+      "achieved_mean_rps": 400.0,
+      "achieved_std_rps": 2.0,
+      "sent_mean_rps": 400.0,
+      "ratio": 1.0,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 7.779,
+      "p95_ms": 14.96,
+      "p99_ms": 15.852,
+      "window_s": [
+        35,
+        50
+      ]
+    },
+    {
+      "step": 3,
+      "offered_rps": 600,
+      "achieved_mean_rps": 599.933,
+      "achieved_std_rps": 10.208,
+      "sent_mean_rps": 599.867,
+      "ratio": 0.9999,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 7.945,
+      "p95_ms": 15.1,
+      "p99_ms": 16.32,
+      "window_s": [
+        55,
+        70
+      ]
+    },
+    {
+      "step": 4,
+      "offered_rps": 800,
+      "achieved_mean_rps": 759.6,
+      "achieved_std_rps": 99.822,
+      "sent_mean_rps": 799.733,
+      "ratio": 0.9495,
+      "non_2xx_share": 0.05026,
+      "conn_errors": 0,
+      "p50_ms": 12.406,
+      "p95_ms": 5009.166,
+      "p99_ms": 5303.882,
+      "window_s": [
+        75,
+        90
+      ]
+    },
+    {
+      "step": 5,
+      "offered_rps": 1000,
+      "achieved_mean_rps": 1001.867,
+      "achieved_std_rps": 14.015,
+      "sent_mean_rps": 999.533,
+      "ratio": 1.0019,
+      "non_2xx_share": 0.07446,
+      "conn_errors": 0,
+      "p50_ms": 9.09,
+      "p95_ms": 5200.633,
+      "p99_ms": 5914.353,
+      "window_s": [
+        95,
+        110
+      ]
+    },
+    {
+      "step": 6,
+      "offered_rps": 1200,
+      "achieved_mean_rps": 1200.533,
+      "achieved_std_rps": 4.19,
+      "sent_mean_rps": 1199.467,
+      "ratio": 1.0004,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 7.483,
+      "p95_ms": 15.835,
+      "p99_ms": 24.943,
+      "window_s": [
+        115,
+        130
+      ]
+    },
+    {
+      "step": 7,
+      "offered_rps": 1400,
+      "achieved_mean_rps": 1339.867,
+      "achieved_std_rps": 317.674,
+      "sent_mean_rps": 1400.067,
+      "ratio": 0.957,
+      "non_2xx_share": 0.043,
+      "conn_errors": 0,
+      "p50_ms": 11.647,
+      "p95_ms": 890.647,
+      "p99_ms": 5025.533,
+      "window_s": [
+        135,
+        150
+      ]
+    },
+    {
+      "step": 8,
+      "offered_rps": 1600,
+      "achieved_mean_rps": 1599.867,
+      "achieved_std_rps": 12.609,
+      "sent_mean_rps": 1600.2,
+      "ratio": 0.9999,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 7.395,
+      "p95_ms": 30.016,
+      "p99_ms": 104.203,
+      "window_s": [
+        155,
+        170
+      ]
+    },
+    {
+      "step": 9,
+      "offered_rps": 1800,
+      "achieved_mean_rps": 1799.267,
+      "achieved_std_rps": 37.612,
+      "sent_mean_rps": 1799.933,
+      "ratio": 0.9996,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 10.21,
+      "p95_ms": 44.958,
+      "p99_ms": 76.194,
+      "window_s": [
+        175,
+        190
+      ]
+    },
+    {
+      "step": 10,
+      "offered_rps": 2000,
+      "achieved_mean_rps": 1998.867,
+      "achieved_std_rps": 42.743,
+      "sent_mean_rps": 1998.8,
+      "ratio": 0.9994,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 6.255,
+      "p95_ms": 15.684,
+      "p99_ms": 28.667,
+      "window_s": [
+        195,
+        210
+      ]
+    },
+    {
+      "step": 11,
+      "offered_rps": 2200,
+      "achieved_mean_rps": 2200.267,
+      "achieved_std_rps": 14.36,
+      "sent_mean_rps": 2199.667,
+      "ratio": 1.0001,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 6.111,
+      "p95_ms": 13.851,
+      "p99_ms": 16.297,
+      "window_s": [
+        215,
+        230
+      ]
+    },
+    {
+      "step": 12,
+      "offered_rps": 2400,
+      "achieved_mean_rps": 2396.4,
+      "achieved_std_rps": 18.826,
+      "sent_mean_rps": 2400.267,
+      "ratio": 0.9985,
+      "non_2xx_share": 0.00136,
+      "conn_errors": 49,
+      "p50_ms": 5.919,
+      "p95_ms": 13.782,
+      "p99_ms": 16.346,
+      "window_s": [
+        235,
+        250
+      ]
+    },
+    {
+      "step": 13,
+      "offered_rps": 2600,
+      "achieved_mean_rps": 2601.067,
+      "achieved_std_rps": 24.435,
+      "sent_mean_rps": 2601.2,
+      "ratio": 1.0004,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 6.899,
+      "p95_ms": 13.976,
+      "p99_ms": 16.741,
+      "window_s": [
+        255,
+        270
+      ]
+    },
+    {
+      "step": 14,
+      "offered_rps": 2800,
+      "achieved_mean_rps": 2799.533,
+      "achieved_std_rps": 15.514,
+      "sent_mean_rps": 2799.333,
+      "ratio": 0.9998,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 6.761,
+      "p95_ms": 13.603,
+      "p99_ms": 15.32,
+      "window_s": [
+        275,
+        290
+      ]
+    },
+    {
+      "step": 15,
+      "offered_rps": 3000,
+      "achieved_mean_rps": 3001.6,
+      "achieved_std_rps": 15.788,
+      "sent_mean_rps": 3000.667,
+      "ratio": 1.0005,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 6.349,
+      "p95_ms": 13.419,
+      "p99_ms": 15.402,
+      "window_s": [
+        295,
+        310
+      ]
+    },
+    {
+      "step": 16,
+      "offered_rps": 3200,
+      "achieved_mean_rps": 3199.6,
+      "achieved_std_rps": 11.538,
+      "sent_mean_rps": 3199.6,
+      "ratio": 0.9999,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 6.414,
+      "p95_ms": 13.185,
+      "p99_ms": 14.962,
+      "window_s": [
+        315,
+        330
+      ]
+    },
+    {
+      "step": 17,
+      "offered_rps": 3400,
+      "achieved_mean_rps": 3400.133,
+      "achieved_std_rps": 16.453,
+      "sent_mean_rps": 3400.933,
+      "ratio": 1.0,
+      "non_2xx_share": 0.00051,
+      "conn_errors": 26,
+      "p50_ms": 6.124,
+      "p95_ms": 13.35,
+      "p99_ms": 17.088,
+      "window_s": [
+        335,
+        350
+      ]
+    },
+    {
+      "step": 18,
+      "offered_rps": 3600,
+      "achieved_mean_rps": 3599.867,
+      "achieved_std_rps": 20.227,
+      "sent_mean_rps": 3599.8,
+      "ratio": 1.0,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 5.879,
+      "p95_ms": 13.092,
+      "p99_ms": 15.555,
+      "window_s": [
+        355,
+        370
+      ]
+    },
+    {
+      "step": 19,
+      "offered_rps": 3800,
+      "achieved_mean_rps": 3799.8,
+      "achieved_std_rps": 24.384,
+      "sent_mean_rps": 3798.133,
+      "ratio": 0.9999,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 5.809,
+      "p95_ms": 13.179,
+      "p99_ms": 16.426,
+      "window_s": [
+        375,
+        390
+      ]
+    },
+    {
+      "step": 20,
+      "offered_rps": 4000,
+      "achieved_mean_rps": 3916.867,
+      "achieved_std_rps": 322.848,
+      "sent_mean_rps": 4000.0,
+      "ratio": 0.9792,
+      "non_2xx_share": 0.00844,
+      "conn_errors": 0,
+      "p50_ms": 6.183,
+      "p95_ms": 116.849,
+      "p99_ms": 3480.391,
+      "window_s": [
+        395,
+        410
+      ]
+    },
+    {
+      "step": 21,
+      "offered_rps": 4200,
+      "achieved_mean_rps": 4199.8,
+      "achieved_std_rps": 19.065,
+      "sent_mean_rps": 4199.8,
+      "ratio": 1.0,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 4.617,
+      "p95_ms": 14.428,
+      "p99_ms": 19.381,
+      "window_s": [
+        415,
+        430
+      ]
+    },
+    {
+      "step": 22,
+      "offered_rps": 4400,
+      "achieved_mean_rps": 4399.933,
+      "achieved_std_rps": 32.984,
+      "sent_mean_rps": 4400.4,
+      "ratio": 1.0,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 4.843,
+      "p95_ms": 14.301,
+      "p99_ms": 18.707,
+      "window_s": [
+        435,
+        450
+      ]
+    },
+    {
+      "step": 23,
+      "offered_rps": 4600,
+      "achieved_mean_rps": 4596.8,
+      "achieved_std_rps": 115.674,
+      "sent_mean_rps": 4599.733,
+      "ratio": 0.9993,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 7.31,
+      "p95_ms": 80.027,
+      "p99_ms": 153.658,
+      "window_s": [
+        455,
+        470
+      ]
+    },
+    {
+      "step": 24,
+      "offered_rps": 4800,
+      "achieved_mean_rps": 4912.133,
+      "achieved_std_rps": 627.378,
+      "sent_mean_rps": 4891.467,
+      "ratio": 1.0234,
+      "non_2xx_share": 0.01298,
+      "conn_errors": 6,
+      "p50_ms": 26.991,
+      "p95_ms": 530.437,
+      "p99_ms": 5129.802,
+      "window_s": [
+        475,
+        490
+      ]
+    },
+    {
+      "step": 25,
+      "offered_rps": 5000,
+      "achieved_mean_rps": 5052.067,
+      "achieved_std_rps": 280.013,
+      "sent_mean_rps": 5030.933,
+      "ratio": 1.0104,
+      "non_2xx_share": 0.00137,
+      "conn_errors": 0,
+      "p50_ms": 22.751,
+      "p95_ms": 255.087,
+      "p99_ms": 473.043,
+      "window_s": [
+        495,
+        510
+      ]
+    },
+    {
+      "step": 26,
+      "offered_rps": 5200,
+      "achieved_mean_rps": 5118.933,
+      "achieved_std_rps": 498.637,
+      "sent_mean_rps": 5146.133,
+      "ratio": 0.9844,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 53.483,
+      "p95_ms": 527.675,
+      "p99_ms": 710.361,
+      "window_s": [
+        515,
+        530
+      ]
+    },
+    {
+      "step": 27,
+      "offered_rps": 5400,
+      "achieved_mean_rps": 5399.667,
+      "achieved_std_rps": 120.643,
+      "sent_mean_rps": 5399.867,
+      "ratio": 0.9999,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 9.353,
+      "p95_ms": 66.584,
+      "p99_ms": 264.211,
+      "window_s": [
+        535,
+        550
+      ]
+    },
+    {
+      "step": 28,
+      "offered_rps": 5600,
+      "achieved_mean_rps": 5487.467,
+      "achieved_std_rps": 662.863,
+      "sent_mean_rps": 5498.133,
+      "ratio": 0.9799,
+      "non_2xx_share": 0.00653,
+      "conn_errors": 135,
+      "p50_ms": 46.223,
+      "p95_ms": 480.027,
+      "p99_ms": 768.286,
+      "window_s": [
+        555,
+        570
+      ]
+    },
+    {
+      "step": 29,
+      "offered_rps": 5800,
+      "achieved_mean_rps": 5084.133,
+      "achieved_std_rps": 1475.32,
+      "sent_mean_rps": 5207.2,
+      "ratio": 0.8766,
+      "non_2xx_share": 0.01294,
+      "conn_errors": 395,
+      "p50_ms": 603.653,
+      "p95_ms": 3383.303,
+      "p99_ms": 3773.61,
+      "window_s": [
+        575,
+        590
+      ]
+    },
+    {
+      "step": 30,
+      "offered_rps": 6000,
+      "achieved_mean_rps": 4570.8,
+      "achieved_std_rps": 2252.016,
+      "sent_mean_rps": 4800.0,
+      "ratio": 0.7618,
+      "non_2xx_share": 0.0134,
+      "conn_errors": 645,
+      "p50_ms": 3683.532,
+      "p95_ms": 6974.908,
+      "p99_ms": 8774.515,
+      "window_s": [
+        595,
+        610
+      ]
+    }
+  ],
+  "responses_2xx_by_pod": {
+    "-": 1852359
+  },
+  "generator_lag_p99_ms": 10432.787,
+  "config": {
+    "name": "noop",
+    "url": "http://localhost:8081",
+    "path": "/noop",
+    "noop": true,
+    "warmup_s": 10,
+    "step_rate": 200,
+    "step_seconds": 20,
+    "transient_s": 5,
+    "timeout_s": 5.0,
+    "procs": 4,
+    "max_conns": 512,
+    "g": null,
+    "max_rate": 20000,
+    "cpu_count": 8,
+    "t0_unix": 1792527476.19
+  }
+}

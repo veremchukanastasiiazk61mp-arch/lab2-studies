@@ -1,0 +1,199 @@
+{
+  "X_rps": 198.4,
+  "X_std_rps": 6.555,
+  "X_step": 8,
+  "stop_reason": "two_steps_below_0.9",
+  "steps": [
+    {
+      "step": 1,
+      "offered_rps": 25,
+      "achieved_mean_rps": 25.0,
+      "achieved_std_rps": 0.378,
+      "sent_mean_rps": 25.0,
+      "ratio": 1.0,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 12.356,
+      "p95_ms": 27.791,
+      "p99_ms": 65.19,
+      "window_s": [
+        15,
+        30
+      ]
+    },
+    {
+      "step": 2,
+      "offered_rps": 50,
+      "achieved_mean_rps": 50.0,
+      "achieved_std_rps": 0.756,
+      "sent_mean_rps": 50.0,
+      "ratio": 1.0,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 12.609,
+      "p95_ms": 21.13,
+      "p99_ms": 54.095,
+      "window_s": [
+        35,
+        50
+      ]
+    },
+    {
+      "step": 3,
+      "offered_rps": 75,
+      "achieved_mean_rps": 75.067,
+      "achieved_std_rps": 1.28,
+      "sent_mean_rps": 75.067,
+      "ratio": 1.0009,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 12.075,
+      "p95_ms": 20.3,
+      "p99_ms": 56.296,
+      "window_s": [
+        55,
+        70
+      ]
+    },
+    {
+      "step": 4,
+      "offered_rps": 100,
+      "achieved_mean_rps": 99.867,
+      "achieved_std_rps": 61.819,
+      "sent_mean_rps": 100.0,
+      "ratio": 0.9987,
+      "non_2xx_share": 0.00266,
+      "conn_errors": 4,
+      "p50_ms": 22.218,
+      "p95_ms": 3345.942,
+      "p99_ms": 3516.046,
+      "window_s": [
+        75,
+        90
+      ]
+    },
+    {
+      "step": 5,
+      "offered_rps": 125,
+      "achieved_mean_rps": 125.333,
+      "achieved_std_rps": 2.69,
+      "sent_mean_rps": 124.933,
+      "ratio": 1.0027,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 14.354,
+      "p95_ms": 56.107,
+      "p99_ms": 79.861,
+      "window_s": [
+        95,
+        110
+      ]
+    },
+    {
+      "step": 6,
+      "offered_rps": 150,
+      "achieved_mean_rps": 150.133,
+      "achieved_std_rps": 2.973,
+      "sent_mean_rps": 149.867,
+      "ratio": 1.0009,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 13.452,
+      "p95_ms": 36.167,
+      "p99_ms": 70.634,
+      "window_s": [
+        115,
+        130
+      ]
+    },
+    {
+      "step": 7,
+      "offered_rps": 175,
+      "achieved_mean_rps": 174.933,
+      "achieved_std_rps": 3.845,
+      "sent_mean_rps": 174.933,
+      "ratio": 0.9996,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 12.898,
+      "p95_ms": 30.201,
+      "p99_ms": 66.422,
+      "window_s": [
+        135,
+        150
+      ]
+    },
+    {
+      "step": 8,
+      "offered_rps": 200,
+      "achieved_mean_rps": 198.4,
+      "achieved_std_rps": 6.555,
+      "sent_mean_rps": 200.0,
+      "ratio": 0.992,
+      "non_2xx_share": 0.00668,
+      "conn_errors": 20,
+      "p50_ms": 13.144,
+      "p95_ms": 61.006,
+      "p99_ms": 87.521,
+      "window_s": [
+        155,
+        170
+      ]
+    },
+    {
+      "step": 9,
+      "offered_rps": 225,
+      "achieved_mean_rps": 96.6,
+      "achieved_std_rps": 62.825,
+      "sent_mean_rps": 225.067,
+      "ratio": 0.4293,
+      "non_2xx_share": 0.43042,
+      "conn_errors": 0,
+      "p50_ms": 3412.689,
+      "p95_ms": 5022.194,
+      "p99_ms": 5026.971,
+      "window_s": [
+        175,
+        190
+      ]
+    },
+    {
+      "step": 10,
+      "offered_rps": 250,
+      "achieved_mean_rps": 0.933,
+      "achieved_std_rps": 2.251,
+      "sent_mean_rps": 250.133,
+      "ratio": 0.0037,
+      "non_2xx_share": 0.99627,
+      "conn_errors": 0,
+      "p50_ms": 5012.423,
+      "p95_ms": 5022.992,
+      "p99_ms": 5027.52,
+      "window_s": [
+        195,
+        210
+      ]
+    }
+  ],
+  "responses_2xx_by_pod": {
+    "9635ca8de12a": 20544
+  },
+  "generator_lag_p99_ms": 16.323,
+  "config": {
+    "name": "rep3_step_n1",
+    "url": "http://localhost:8081",
+    "path": "/studies/{id}",
+    "noop": false,
+    "warmup_s": 10,
+    "step_rate": 25,
+    "step_seconds": 20,
+    "transient_s": 5,
+    "timeout_s": 5.0,
+    "procs": 4,
+    "max_conns": 512,
+    "g": 5487.467,
+    "max_rate": 20000,
+    "cpu_count": 8,
+    "t0_unix": 1792593617.76
+  }
+}

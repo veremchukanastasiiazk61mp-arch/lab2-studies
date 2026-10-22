@@ -1,0 +1,21 @@
+{
+  "container": "studies-web-2",
+  "exit_code": 0,
+  "docker_stop_seconds": 2.86,
+  "stop_at_s_from_start": 25.0,
+  "window_s": [
+    15.0,
+    35.0
+  ],
+  "window": {
+    "ok_2xx": 1198,
+    "non_2xx": 0,
+    "conn_errors": 0
+  },
+  "whole_run": {
+    "ok_2xx": 2400,
+    "non_2xx": 0,
+    "conn_errors": 0
+  },
+  "passed": true
+}

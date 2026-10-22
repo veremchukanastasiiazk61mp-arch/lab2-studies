@@ -1,0 +1,20 @@
+# ЛР2, крок 4. Інтервал збору 5 с; екземпляри web знаходяться через DNS Docker:
+# запит A за іменем сервісу web повертає адреси всіх його контейнерів.
+global:
+  scrape_interval: 5s
+  scrape_timeout: 4s
+  evaluation_interval: 5s
+
+scrape_configs:
+  - job_name: web
+    metrics_path: /metrics
+    dns_sd_configs:
+      - names: [web]
+        type: A
+        port: 8000          # має збігатися з HTTP_PORT у docker-compose.yml
+        refresh_interval: 5s
+
+  # Додаткова метрика варіанта 5 (М2): postgres-exporter
+  - job_name: postgres
+    static_configs:
+      - targets: ["postgres-exporter:9187"]

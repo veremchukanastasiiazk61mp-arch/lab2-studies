@@ -1,0 +1,46 @@
+{
+  "X_rps": 150.133,
+  "X_std_rps": 0.99,
+  "X_step": 1,
+  "stop_reason": "max_rate",
+  "steps": [
+    {
+      "step": 1,
+      "offered_rps": 150,
+      "achieved_mean_rps": 150.133,
+      "achieved_std_rps": 0.99,
+      "sent_mean_rps": 150.133,
+      "ratio": 1.0009,
+      "non_2xx_share": 0.0,
+      "conn_errors": 0,
+      "p50_ms": 9.797,
+      "p95_ms": 39.52,
+      "p99_ms": 73.257,
+      "window_s": [
+        125,
+        140
+      ]
+    }
+  ],
+  "responses_2xx_by_pod": {
+    "9635ca8de12a": 20961
+  },
+  "generator_lag_p99_ms": 16.039,
+  "config": {
+    "name": "shot",
+    "url": "http://localhost:8081",
+    "path": "/studies/{id}",
+    "noop": false,
+    "warmup_s": 120,
+    "step_rate": 150,
+    "step_seconds": 20,
+    "transient_s": 5,
+    "timeout_s": 5.0,
+    "procs": 2,
+    "max_conns": 512,
+    "g": null,
+    "max_rate": 150,
+    "cpu_count": 8,
+    "t0_unix": 1792665725.555
+  }
+}
