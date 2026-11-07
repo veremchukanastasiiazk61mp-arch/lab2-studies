@@ -1,25 +1,4 @@
-#!/usr/bin/env python3
-"""ЛР2, кроки 6–7: прогін проти /noop (межа генератора G) і ступінчасті прогони на N = 1..4.
 
-Для кожного N:
-  - піднімає стенд (WEB_REPLICAS=N), перезапускає балансувальник, чекає готовності web і стану UP
-    усіх N цілей у Prometheus;
-  - запускає stepload.py з --g G і під час прогону знімає docker stats (кожні ~5 с);
-  - вивантажує сирі вибірки Prometheus за час прогону у results/<тег>prom_nN.json.
-
-Запуск з кореня проєкту (Git Bash, PowerShell або Linux):
-  python scripts/run_series.py                       # повна серія: noop + N=1,2,3,4
-  python scripts/run_series.py --ns 1 2              # лише частина
-  python scripts/run_series.py --step-rate 25        # крок сходинки для web (за замовчуванням 25)
-  python scripts/run_series.py --skip-noop --g 2400  # межа G уже відома
-  python scripts/run_series.py --tag cpu025_         # повтор серії з іншим лімітом CPU (крок 7)
-
-Ліміт CPU береться з WEB_CPUS у .env. Щоб зменшити його вдвічі, змініть WEB_CPUS (0.5 -> 0.25)
-і запустіть серію з іншим --tag, щоб не перезаписати результати.
-
-Необовʼязково: `pip install psutil` — тоді додатково знімається завантаження CPU хоста і процесів
-генератора (для кроку 11).
-"""
 import argparse
 import json
 import os

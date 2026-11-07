@@ -1,4 +1,4 @@
-"""Рис. 9 ЛР2: X(N) з розкидом = стандартне відхилення посекундної інтенсивності на сходинці X(N)."""
+
 import statistics, sys, json
 sys.path.insert(0, "../l2/z/046be806-lab2-part3/analysis")
 import matplotlib

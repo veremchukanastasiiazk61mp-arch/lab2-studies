@@ -1,4 +1,4 @@
-"""Конфігурація ЛР2: DB_POOL_SIZE, бакети гістограми, один процес, POD_NAME."""
+
 import contextlib
 import os
 import socket

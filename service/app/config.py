@@ -1,8 +1,4 @@
-"""Уся конфігурація береться тільки зі змінних середовища.
 
-Жодного значення за замовчуванням у коді немає: якщо змінної бракує або вона
-некоректна, процес не стартує і одразу називає всі проблемні змінні.
-"""
 import os
 import socket
 from dataclasses import dataclass
@@ -20,7 +16,7 @@ class Settings:
     db_user: str
     db_password: str
     db_pool_min: int
-    db_pool_size: int  # ЛР2: найбільша кількість відкритих зʼєднань екземпляра (без overflow)
+    db_pool_size: int
     db_connect_timeout: float
     db_command_timeout: float
     http_host: str
@@ -30,8 +26,8 @@ class Settings:
     max_limit: int
     log_level: str
     access_log: bool
-    histogram_buckets_s: tuple[float, ...]  # ЛР2: верхні межі бакетів гістограми, секунди
-    pod_name: str  # ЛР2: імʼя екземпляра для заголовка X-Pod
+    histogram_buckets_s: tuple[float, ...]
+    pod_name: str
 
 
 def load_settings() -> Settings:

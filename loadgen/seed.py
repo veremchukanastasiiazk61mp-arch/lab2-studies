@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-"""Заносить N записів через API і зберігає їхні ідентифікатори для генератора."""
+
 import argparse
 import json
 import urllib.request

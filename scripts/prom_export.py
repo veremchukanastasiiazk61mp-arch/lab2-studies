@@ -1,22 +1,11 @@
-#!/usr/bin/env python3
-"""Вивантаження сирих вибірок із Prometheus у JSON (ЛР2, кроки 7–11).
 
-Діаграми і розрахунки будуються з цього файла, тому вони відтворюються і після
-видалення томів Compose (docker compose down -v).
-
-Для кожного селектора береться запит виду  селектор[<тривалість>s]  на момент end:
-це сирі вибірки з їхніми справжніми часовими мітками (не інтерполяція query_range).
-
-Запуск окремо:
-  python scripts/prom_export.py --prom http://localhost:9090 --start <unix> --end <unix> --out results/prom_n1.json
-"""
 import argparse
 import json
 import time
 import urllib.parse
 import urllib.request
 
-# імʼя в файлі -> селектор PromQL
+
 SELECTORS = {
     "bucket": 'http_request_duration_seconds_bucket{job="web",path="/studies/{study_id}"}',
     "requests": 'http_requests_total{job="web"}',

@@ -16,9 +16,9 @@ from .schemas import StudyIn
 log = logging.getLogger("studies")
 logging.basicConfig(level=settings.log_level.upper(), format="%(asctime)s %(levelname)s %(name)s %(message)s")
 
-POD = settings.pod_name  # імʼя екземпляра: POD_NAME, а без неї імʼя хоста контейнера
+POD = settings.pod_name
 MAX_BIGINT = 2**63 - 1
-MAX_OFFSET = 1_000_000_000  # технічна межа, щоб не віддати помилку бази назовні
+MAX_OFFSET = 1_000_000_000
 
 COLUMNS = (
     "id, patient_code, modality, slice_count, "

@@ -1,4 +1,4 @@
-"""Юніт-тести правил валідації варіанта 5. Запуск: див. README (потрібні змінні середовища для app.config)."""
+
 import pytest
 from pydantic import ValidationError
 

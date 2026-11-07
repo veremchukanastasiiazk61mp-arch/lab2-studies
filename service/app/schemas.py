@@ -3,7 +3,7 @@ from typing import Annotated, Any
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, field_validator
 
-INT32_MAX = 2_147_483_647  # межа типу integer у PostgreSQL, не бізнес-правило
+INT32_MAX = 2_147_483_647
 
 
 class StudyIn(BaseModel):
